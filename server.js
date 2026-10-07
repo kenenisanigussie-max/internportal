@@ -52,5 +52,5 @@ app.post('/api/webhook', async (req, res) => {
   res.status(200).json({ received: true });
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5173;
 app.listen(PORT, () => console.log(`🚀 Backend server listening on http://localhost:${PORT}`));

@@ -1,5 +1,21 @@
 import jsPDF from 'jspdf';
 import QRCode from 'qrcode';
+import { supabase } from './supabaseClient'
+import html2pdf from 'html2pdf.js';
+import { QRCodeSVG } from 'qrcode.react';
+
+<QRCodeSVG value={`https://yourdomain.com/verify/${app.id}`} size={96} />
+const downloadPDF = () => {
+  const element = document.getElementById('letter-template');
+  html2pdf().from(element).save('UIL_Support_Letter.pdf');
+};
+useEffect(() => {
+  async function fetchData() {
+    const { data: apps } = await supabase.from('applications').select('*')
+    if (apps) setApplications(apps)
+  }
+  fetchData()
+}, [])
 
 export const generateUILPDF = async (studentName, studentId, companyName) => {
   const doc = new jsPDF();
