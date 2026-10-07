@@ -1,6 +1,7 @@
 import jsPDF from 'jspdf';
 import QRCode from 'qrcode';
-import { supabase } from './supabaseClient'
+
+
 import html2pdf from 'html2pdf.js';
 import { QRCodeSVG } from 'qrcode.react';
 
